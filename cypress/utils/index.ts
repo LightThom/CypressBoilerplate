@@ -1,0 +1,10 @@
+// ------------------------ Page-Index -------------------------------------
+// All Page Object Models - please create export for each page here
+// so all pages can be imported as one import for use in other files
+// -------------------------------------------------------------------------
+//
+// ------------------------ Example Page ------------------------------------
+export { LoginPage } from '../page-objects/LoginPage';
+export { GoogleSearch } from '../page-objects/Google-Search.page'
+// -------------------------------------------------------------------------
+//
