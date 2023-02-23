@@ -9,7 +9,7 @@ A starter repo for writing E2E tests with cypress using TypeScript
 - Cypress/TypeScript inital setup
 - How to run tests within Cypress/VSCode
 - Working with Page Objects
-- Working with index's
+- Working with indexes
 
 ## Set Up
 
@@ -41,7 +41,7 @@ A page object represents a part of your web application. A web application might
 Page objects simplify authoring by creating a higher-level API which suits your application and simplify maintenance by capturing element selectors in one place and create reusable code to avoid repetition.
 
 
-### Working with Index's
+### Working with Indexes
 
 An index represents a collection of pages/classes within the framework in a single file.
 
