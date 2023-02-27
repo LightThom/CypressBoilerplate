@@ -16,7 +16,7 @@ export class GoogleSearch{
         
         googleSearch(text) {
             this.elements.googleSearch()
-            .type(text)
+            .type(text);
         }
 
         clickGoogleSearchButton() {
