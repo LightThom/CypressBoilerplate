@@ -4,7 +4,7 @@
 // -------------------------------------------------------------------------
 //
 // ------------------------ Example Page ------------------------------------
-export { LoginPage } from '../page-objects/LoginPage';
-export { GoogleSearch } from '../page-objects/Google-Search.page'
+export { LoginPage } from '../pages/LoginPage';
+export { GoogleSearch } from '../pages/GoogleSearchPage';
 // -------------------------------------------------------------------------
 //
