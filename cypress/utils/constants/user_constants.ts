@@ -6,30 +6,13 @@ export const USER = {
     // User Details
     TEST: {
       //USER: EMAIL=
-      TestGameIdUserName: `${email}`,
-      TestGameIdPassword: `${password}`,
+      TestIdUserName: `${email}`,
+      TestIdPassword: `${password}`,
     
       //default User details
-      TestTitle: '',
-      TestFirstName: '',
-      TestLastName: '',
-      TestMobile: '',
-      TestFirstAddressLine: '',
-      TestTown: '',
-      TestCounty: '',
-      TestPostcode: '',
-      TestDay: 1,
-      TestMonth: 2,
-      TestYear: 1234,
-    },
-  
-    NEW_USER: {
-      TestFirstName: '',
-      TestLastName: '',
-      TestMobile: '',
-      TestFirstAddressLine: '',
-      TestTown: '',
-      TestCounty: '',
-      TestPostcode: '',
+      student: 'Tim Allen',
+      email_address: 'tim@homeimprovement.com',
+      phone: '(408) 8674530',
+      current_grade: 'B+',
     }
 };
