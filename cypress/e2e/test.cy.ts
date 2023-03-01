@@ -4,19 +4,18 @@ import { GoogleSearch } from '../utils/page_index';
 const search = new GoogleSearch();
 
 describe('Google Navigation', () => {
-
     beforeEach(() => {
-    search.navigate()
-    search.clickAcceptAllCookies()
-    })
+        search.navigate();
+        search.clickAcceptAllCookies();
+    });
 
     afterEach(() => {
-        cy.screenshot()
-    })
+        cy.screenshot();
+    });
 
-    it('Google Search',() => {
-        search.googleSearch('something{enter}')
-        search.clickGoogleSearchButton()
-        search.elements.searchResults().should('exist')
-    })
+    it('Google Search', () => {
+        search.googleSearch('something{enter}');
+        search.clickGoogleSearchButton();
+        search.elements.searchResults().should('exist');
+    });
 });
