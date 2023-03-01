@@ -13,7 +13,7 @@ export class GoogleSearchPage {
         cy.visit('https://www.google.com');
     }
 
-    googleSearch(text) {
+    googleSearch(text: string) {
         this.elements.googleSearch().type(text);
     }
 
