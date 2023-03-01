@@ -5,6 +5,6 @@
 //
 // ------------------------ Example Page ------------------------------------
 export { LoginPage } from '../pages/page-actions/LoginPage';
-export { GoogleSearch } from '../pages/page-actions/GoogleSearchPage';
+export { GoogleSearchPage } from '../pages/page-actions/GoogleSearchPage';
 // -------------------------------------------------------------------------
 //
