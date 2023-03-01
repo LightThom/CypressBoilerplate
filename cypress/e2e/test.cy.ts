@@ -1,7 +1,7 @@
 //This is spec file, inside your google-search.spec.ts
-import { GoogleSearch } from '../utils/page_index';
+import { GoogleSearchPage } from '../utils/page_index';
 
-const search = new GoogleSearch();
+const search = new GoogleSearchPage();
 
 describe('Google Navigation', () => {
     beforeEach(() => {
@@ -16,6 +16,6 @@ describe('Google Navigation', () => {
     it('Google Search', () => {
         search.googleSearch('something{enter}');
         search.clickGoogleSearchButton();
-        search.elements.searchResults().should('exist');
+        search.searchResults().should('exist');
     });
 });
