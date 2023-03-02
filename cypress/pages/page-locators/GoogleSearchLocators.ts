@@ -1,17 +1,11 @@
 export class GoogleSearchLocators {
-    get googleSearchInputField() {
-        return cy.get('input[name="q"]');
-    }
+    elements = {
+        googleSearchInputField: () => cy.get('input[name="q"]'),
 
-    get googleSearchButton() {
-        return cy.get('input[name="btnK"]');
-    }
+        googleSearchButton: () => cy.get('input[name="btnK"]'),
 
-    get searchResults() {
-        return cy.get('#result-stats');
-    }
+        searchResults: () => cy.get('#result-stats'),
 
-    get acceptAllCookies() {
-        return cy.get('#L2AGLb > .QS5gu');
+        acceptAllCookies: () => cy.get('#L2AGLb > .QS5gu')
     }
-}
+};

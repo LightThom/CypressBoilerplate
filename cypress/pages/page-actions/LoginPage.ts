@@ -1,6 +1,6 @@
 import { LoginLocators } from '../../utils/page_index';
 
-export class LoginPage extends LoginLocators {
+export class LoginPage {
     navigate() {
         cy.visit('/Login');
     }

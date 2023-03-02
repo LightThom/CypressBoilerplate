@@ -3,6 +3,7 @@
 // so all pages can be imported as one import for use in other files
 // -------------------------------------------------------------------------
 //
+export { GoogleSearchPageTest } from '../pages/test';
 // ------------------------ Example Page ------------------------------------
 export { LoginPage } from '../pages/page-actions/LoginPage';
 export { GoogleSearchPage } from '../pages/page-actions/GoogleSearchPage';
