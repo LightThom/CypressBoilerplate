@@ -1,9 +1,9 @@
 //This is pageobject file.
-export class GoogleSearchPageTest {
+export class GoogleSearchLocatorsPage {
     // Page Elements
     elements = {
         googleSearch: () => cy.get('input[name="q"]'),
-        googleSearchButton: () => cy.get('input[name="btnK"]'),
+        googleSearchButton: () => cy.get('div.FPdoLc input[name="btnK"]'),
         searchResults: () => cy.get('#result-stats'),
         acceptAllCookies: () => cy.get('#L2AGLb > .QS5gu'),
     };
@@ -18,10 +18,7 @@ export class GoogleSearchPageTest {
     }
 
     clickGoogleSearchButton() {
-        const searchButton = this.elements.googleSearchButton();
-        searchButton.click().then(() => {
-            cy.focused().click();
-        });
+        this.elements.googleSearchButton().click();
     }
 
     clickAcceptAllCookies() {

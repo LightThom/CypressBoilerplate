@@ -1,8 +1,11 @@
-export class GoogleSearchLocators {
+import { CommonLocators } from "./CommonLocators";
+
+//This is page elements file.
+export class GoogleSearchLocators extends CommonLocators {
     elements = {
         googleSearchInputField: () => cy.get('input[name="q"]'),
 
-        googleSearchButton: () => cy.get('input[name="btnK"]'),
+        googleSearchButton: () => cy.get('div.FPdoLc input[name="btnK"]'),
 
         searchResults: () => cy.get('#result-stats'),
 

@@ -4,6 +4,8 @@ export const USER = {
         //USER: EMAIL=
         //username: 'Cypress.env('userEmail')',
         password: 'Password123',
+        country: '',
+        tcVersion: '',
 
         //default User details
         student: 'Tim Allen',

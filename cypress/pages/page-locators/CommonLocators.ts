@@ -1,17 +1,15 @@
-export class CommonObjects {
-    get example() {
-        return cy.get('#example');
+//This is a Common Locators file
+//used across all page locators to build dynamic locators and common locators are shared across multiple pages.
+export class CommonLocators {
+    commonElements = {
+        example: () => cy.get('#example'),
+
+        navigationBar: () => cy.get('div.navbar-header'),
+
+        googleLogo: () => cy.get('div.navbar-header')
     }
 
-    get navigationBar() {
-        return cy.get('div.navbar-header');
-    }
-
-    get googleLogo() {
-        return this.navigationBar.find('span.icon.google-header-logo');
-    }
-
-    // dynamic locator example
+    // Dynamic locator example
     button(buttonName: string, index: number) {
         return cy.get(`input[name=${buttonName}${index}]`);
     }
