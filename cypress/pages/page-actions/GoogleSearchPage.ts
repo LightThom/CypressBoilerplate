@@ -1,22 +1,22 @@
-import { GoogleSearchLocators } from '../../utils/page_index';
+//This is page action file.
+import { GoogleSearchLocators } from '../page-locators/GoogleSearchLocators';
 
-export class GoogleSearchPage extends GoogleSearchLocators {
+const search = new GoogleSearchLocators;
+
+export class GoogleSearchPage {
     navigate() {
         cy.visit('https://www.google.com');
     }
 
     googleSearch(text: string) {
-        this.googleSearchInputField().type(text);
+        search.elements.googleSearchInputField().type(text);
     }
 
     clickGoogleSearchButton() {
-        const searchButton = this.googleSearchButton();
-        searchButton.click().then(() => {
-            cy.focused().click();
-        });
+        search.elements.googleSearchButton().click();
     }
 
     clickAcceptAllCookies() {
-        this.acceptAllCookies().click();
+        search.elements.acceptAllCookies().click();
     }
 }

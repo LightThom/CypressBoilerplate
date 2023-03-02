@@ -1,13 +1,11 @@
-//USER: EMAIL=
-//const email = process.env.EMAIL;
-//const password = process.env.PASSWORD;
-
 export const USER = {
     // User Details
     TEST: {
         //USER: EMAIL=
-        // TestIdUserName: `${email}`,
-        // TestIdPassword: `${password}`,
+        //username: 'Cypress.env('userEmail')',
+        password: 'Password123',
+        country: '',
+        tcVersion: '',
 
         //default User details
         student: 'Tim Allen',
