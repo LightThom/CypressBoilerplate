@@ -1,10 +1,6 @@
-export class LoginPage {
-    // Page Elements
-    elements = {
-        example: () => cy.get('#example'),
-    };
+import { LoginLocators } from '../../utils/page_index';
 
-    // Page Actions
+export class LoginPage extends LoginLocators {
     navigate() {
         cy.visit('/Login');
     }

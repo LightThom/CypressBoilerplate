@@ -16,6 +16,6 @@ describe('Google Navigation', () => {
     it('Google Search', () => {
         search.googleSearch('something{enter}');
         search.clickGoogleSearchButton();
-        search.elements.searchResults().should('exist');
+        search.searchResults().should('exist');
     });
 });

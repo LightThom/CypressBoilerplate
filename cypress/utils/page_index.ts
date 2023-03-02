@@ -8,3 +8,6 @@ export { LoginPage } from '../pages/page-actions/LoginPage';
 export { GoogleSearchPage } from '../pages/page-actions/GoogleSearchPage';
 // -------------------------------------------------------------------------
 //
+// -----------------------Example Elements ---------------------------------
+export { LoginLocators } from '../pages/page-locators/LoginLocators';
+export { GoogleSearchLocators } from '../pages/page-locators/GoogleSearchLocators';

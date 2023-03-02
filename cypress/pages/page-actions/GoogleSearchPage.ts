@@ -1,30 +1,22 @@
-//This is pageobject file.
-export class GoogleSearchPage {
-    // Page Elements
-    elements = {
-        googleSearch: () => cy.get('input[name="q"]'),
-        googleSearchButton: () => cy.get('input[name="btnK"]'),
-        searchResults: () => cy.get('#result-stats'),
-        acceptAllCookies: () => cy.get('#L2AGLb > .QS5gu'),
-    };
+import { GoogleSearchLocators } from '../../utils/page_index';
 
-    // Page Actions
+export class GoogleSearchPage extends GoogleSearchLocators {
     navigate() {
         cy.visit('https://www.google.com');
     }
 
     googleSearch(text: string) {
-        this.elements.googleSearch().type(text);
+        this.googleSearchInputField().type(text);
     }
 
     clickGoogleSearchButton() {
-        const searchButton = this.elements.googleSearchButton();
+        const searchButton = this.googleSearchButton();
         searchButton.click().then(() => {
             cy.focused().click();
         });
     }
 
     clickAcceptAllCookies() {
-        this.elements.acceptAllCookies().click();
+        this.acceptAllCookies().click();
     }
 }
