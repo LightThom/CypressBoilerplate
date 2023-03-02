@@ -2,13 +2,19 @@ import { CommonLocators } from "./CommonLocators";
 
 //This is page elements file.
 export class GoogleSearchLocators extends CommonLocators {
-    elements = {
-        googleSearchInputField: () => cy.get('input[name="q"]'),
-
-        googleSearchButton: () => cy.get('div.FPdoLc input[name="btnK"]'),
-
-        searchResults: () => cy.get('#result-stats'),
-
-        acceptAllCookies: () => cy.get('#L2AGLb > .QS5gu')
+    get googleSearchInputField() {
+        return cy.get('input[name="q"]');
     }
-};
+
+    get googleSearchButton() {
+        return cy.get('div.FPdoLc input[name="btnK"]');
+    }
+
+    get searchResults() {
+        return cy.get('#result-stats');
+    }
+
+    get acceptAllCookies() {
+        return cy.get('#L2AGLb > .QS5gu');
+    }
+}

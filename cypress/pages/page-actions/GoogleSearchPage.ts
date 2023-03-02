@@ -9,14 +9,14 @@ export class GoogleSearchPage {
     }
 
     googleSearch(text: string) {
-        search.elements.googleSearchInputField().type(text);
+        search.googleSearchInputField.type(text);
     }
 
     clickGoogleSearchButton() {
-        search.elements.googleSearchButton().click();
+        search.googleSearchButton.click();
     }
 
     clickAcceptAllCookies() {
-        search.elements.acceptAllCookies().click();
+        search.acceptAllCookies.click();
     }
 }

@@ -18,6 +18,6 @@ describe('Google Navigation', () => {
     it('Google Search', () => {
         search.googleSearch('something');
         search.clickGoogleSearchButton();
-        assert.elements.searchResults().should('exist');
+        assert.searchResults.should('exist');
     });
 });
