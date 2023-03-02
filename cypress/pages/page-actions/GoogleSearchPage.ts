@@ -1,24 +1,22 @@
-// import { GoogleSearchLocators } from '../../utils/page_index';
+//This is page action file.
+import { GoogleSearchLocators } from '../page-locators/GoogleSearchLocators';
 
-// const search = new GoogleSearchLocators;
+const search = new GoogleSearchLocators;
 
-// export class GoogleSearchPage {
-//     navigate() {
-//         cy.visit('https://www.google.com');
-//     }
+export class GoogleSearchPage {
+    navigate() {
+        cy.visit('https://www.google.com');
+    }
 
-//     googleSearch(text: string) {
-//         search.elements.googleSearchButton().type(text);
-//     }
+    googleSearch(text: string) {
+        search.elements.googleSearchInputField().type(text);
+    }
 
-//     clickGoogleSearchButton() {
-//         const searchButton = search.elements.googleSearchButton();
-//         searchButton.click().then(() => {
-//             cy.focused().click();
-//         });
-//     }
+    clickGoogleSearchButton() {
+        search.elements.googleSearchButton().click();
+    }
 
-//     clickAcceptAllCookies() {
-//         search.elements.acceptAllCookies().click();
-//     }
-// }
+    clickAcceptAllCookies() {
+        search.elements.acceptAllCookies().click();
+    }
+}
