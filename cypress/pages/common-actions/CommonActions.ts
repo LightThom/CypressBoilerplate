@@ -1,4 +1,4 @@
-export class CommonObjects {
+export class CommonActions {
     navigate() {
         cy.visit('/example/');
     }
