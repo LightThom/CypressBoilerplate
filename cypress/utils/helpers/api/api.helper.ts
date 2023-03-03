@@ -4,10 +4,10 @@ export class TestAPI {
     // Test API for this example
     apiTest() {
         cy.request('POST', constants.URL.TEST.apiTestURL, {
-            student: constants.USER.TEST.student,
-            email_address: constants.USER.TEST.email_address,
-            phone: constants.USER.TEST.phone,
-            current_grade: constants.USER.TEST.current_grade,
+            student: constants.USER.INT.student,
+            email_address: constants.USER.INT.email_address,
+            phone: constants.USER.INT.phone,
+            current_grade: constants.USER.INT.current_grade,
             topping: ['bacon', 'cheese', 'mushroom'],
         }).then((response) => {
             // assert correct HTTP Status Codes returned (200 - OK)

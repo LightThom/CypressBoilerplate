@@ -1,4 +1,5 @@
 import * as constants from '../../constants_index';
+import * as helpers from '../../helper_index';
 
 export class RegisterDeviceId {
     //
@@ -7,7 +8,7 @@ export class RegisterDeviceId {
     getDeviceId() {
         cy.request({
             method: 'GET',
-            url: constants.URL.ACCOUNT.countryURL + constants.USER.TEST.country,
+            url: constants.URL.ACCOUNT.countryURL + constants.USER.INT.country,
             headers: {
                 'deviceId': 'integration_device_id'
             }
@@ -30,8 +31,8 @@ export class RegisterDeviceId {
             body: {
                 "password": "Password123",
                 "username": Cypress.env('userEmail'),
-                "country": constants.USER.TEST.country,
-                "tcVersion": constants.USER.TEST.tcVersion
+                "country": constants.USER.INT.country,
+                "tcVersion": constants.USER.INT.tcVersion
             }
         })
             .then((response) => {
