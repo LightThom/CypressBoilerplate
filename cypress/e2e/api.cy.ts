@@ -4,6 +4,9 @@ import { TestAPI } from '../utils/helper_index';
 const api = new TestAPI();
 
 describe('Google Navigation', () => {
+    beforeEach(() => {
+      })
+
     it('calls API', () => {
         api.apiTest();
     });
