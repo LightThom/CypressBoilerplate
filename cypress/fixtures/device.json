@@ -1,0 +1,7 @@
+{
+    "device": {
+        "deviceId": "integration_device_id",
+        "deviceToken": "integration_device_token",
+        "devicePlatform": "Android"
+    }
+}

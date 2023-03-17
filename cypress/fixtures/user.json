@@ -1,0 +1,24 @@
+{
+    "int": {
+        "password": "Password123",
+        "country": "",
+        "tcVersion": "",
+
+        "student": "Tim Allen",
+        "email_address": "tim@homeimprovement.com",
+        "phone": "(408) 8674530",
+        "current_grade": "B+"
+    },
+    "stage": {
+        "password": "Password123",
+        "country": "",
+        "tcVersion": "",
+
+        "student": "Tim Allen",
+        "email_address": "tim@homeimprovement.com",
+        "phone": "(408) 8674530",
+        "current_grade": "B+",
+
+        "age": 18
+    }
+}
