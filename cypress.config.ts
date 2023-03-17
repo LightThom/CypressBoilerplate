@@ -11,6 +11,7 @@ export default defineConfig({
     },
     e2e: {
         baseUrl: 'https://www.google.co.uk',
+        watchForFileChanges: false,
 
         setupNodeEvents(on, config) {
             // implement node event listeners here

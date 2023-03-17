@@ -2,11 +2,12 @@ import { CommonLocators } from "./CommonLocators";
 
 //This is page elements file.
 export class GoogleSearchLocators extends CommonLocators {
-    get googleSearchInputField() {
+    
+    protected get googleSearchInputField() {
         return cy.get('input[name="q"]');
     }
 
-    get googleSearchButton() {
+    protected get googleSearchButton() {
         return cy.get('div.FPdoLc input[name="btnK"]');
     }
 
@@ -14,7 +15,7 @@ export class GoogleSearchLocators extends CommonLocators {
         return cy.get('#result-stats');
     }
 
-    get acceptAllCookies() {
+    protected get acceptAllCookies() {
         return cy.get('#L2AGLb > .QS5gu');
     }
 }

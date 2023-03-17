@@ -1,13 +1,24 @@
-//This is spec file, inside your google-search.spec.ts
-import { TestAPI } from '../utils/helper_index';
+//This is spec file
+import { Student } from '../api/student';
+import { User } from '../api/user';
 
-const api = new TestAPI();
+describe('API tests', () => {
 
-describe('Google Navigation', () => {
-    beforeEach(() => {
-      })
+    it('creates a student', () => {
+      new Student().createStudent().then((response: Cypress.Response<any>) => {
+        expect(response.status).to.eq(200);
+      });
+    });
 
-    it('calls API', () => {
-        api.apiTest();
+    it('gets user 2', () => {
+      new User().getuser(2).then((response: Cypress.Response<any>) => {
+        expect(response.body.data.first_name).to.equal('Janet');
+      });
+    });
+
+    it("should get 201 when creating a new user", () => {
+      new User().createUser().then((response: Cypress.Response<any>) => {
+        expect(response.status).to.equal(201);
+      });
     });
 });

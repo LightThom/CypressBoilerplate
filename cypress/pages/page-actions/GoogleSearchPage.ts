@@ -1,22 +1,25 @@
 //This is page action file.
 import { GoogleSearchLocators } from '../page-locators/GoogleSearchLocators';
 
-const search = new GoogleSearchLocators;
-
-export class GoogleSearchPage {
+export class GoogleSearchPage extends GoogleSearchLocators {
+    
     navigate() {
         cy.visit('https://www.google.com');
     }
 
     googleSearch(text: string) {
-        search.googleSearchInputField.type(text);
+        this.googleSearchInputField.type(text);
     }
 
     clickGoogleSearchButton() {
-        search.googleSearchButton.click();
+        this.googleSearchButton.click();
     }
 
     clickAcceptAllCookies() {
-        search.acceptAllCookies.click();
+        this.acceptAllCookies.click();
+    }
+
+    getSearchResults() {
+        return this.searchResults;
     }
 }

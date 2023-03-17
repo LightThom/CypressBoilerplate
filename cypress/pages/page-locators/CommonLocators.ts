@@ -1,15 +1,16 @@
 //This is a Common Locators file
 //used across all page locators to build dynamic locators and common locators are shared across multiple pages.
 export class CommonLocators {
-    get example() {
+    
+    protected get example() {
         return cy.get('#example');
     }
 
-    get navigationBar() {
+    protected get navigationBar() {
         return cy.get('div.navbar-header');
     }
 
-    get googleLogo() {
+    protected get googleLogo() {
         return cy.get('div.navbar-header');
     }
 }

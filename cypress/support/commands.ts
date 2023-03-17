@@ -1,25 +1,53 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+export {};
+
+declare global {
+    namespace Cypress {
+        interface Chainable {
+            getRequest(endPoint: string): Chainable<Response<any>>;
+            postRequest(endPoint: string, body: {}): Chainable<Response<any>>;
+            toStringArray() : Chainable<string[]>;
+        }
+    }
+}
+
+Cypress.Commands.add('getRequest', (endPoint: string) => {
+
+    /**
+     * Cypress command for GET requests
+     */
+
+    return cy.request({
+        method: 'GET',
+        url: endPoint,
+        headers: {
+            'Authorization': "Bearer" + Cypress.env("token")
+        }
+    });
+});
+
+Cypress.Commands.add('postRequest', (endPoint: string, body: {}) => {
+
+    /**
+     * Cypress command for POST requests
+     */
+
+    return cy.request({
+        method: 'POST',
+        url: endPoint,
+        headers: {
+            'content-type': 'application/json',
+            'Authorization': "Bearer " + Cypress.env("token")
+        },
+        body: { ...body }
+    });
+});
+
+Cypress.Commands.add('toStringArray', { prevSubject: 'element'}, (subject: JQuery<HTMLElement>) => {
+
+    /**
+     * Returns an array of strings/text of the elements yielded
+     */
+
+    var array: string[] = [];
+    return cy.wrap(subject).each($element => array.push($element.text())).then(() => array);
+});
