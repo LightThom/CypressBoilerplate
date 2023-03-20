@@ -2,7 +2,6 @@
 import { GoogleSearchLocators } from '../page-locators/GoogleSearchLocators';
 
 export class GoogleSearchPage extends GoogleSearchLocators {
-    
     navigate() {
         cy.visit('https://www.google.com');
     }

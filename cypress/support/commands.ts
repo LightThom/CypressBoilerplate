@@ -5,13 +5,12 @@ declare global {
         interface Chainable {
             getRequest(endPoint: string): Chainable<Response<any>>;
             postRequest(endPoint: string, body: {}): Chainable<Response<any>>;
-            toStringArray() : Chainable<string[]>;
+            toStringArray(): Chainable<string[]>;
         }
     }
 }
 
 Cypress.Commands.add('getRequest', (endPoint: string) => {
-
     /**
      * Cypress command for GET requests
      */
@@ -20,13 +19,12 @@ Cypress.Commands.add('getRequest', (endPoint: string) => {
         method: 'GET',
         url: endPoint,
         headers: {
-            'Authorization': "Bearer" + Cypress.env("token")
-        }
+            Authorization: 'Bearer' + Cypress.env('token'),
+        },
     });
 });
 
 Cypress.Commands.add('postRequest', (endPoint: string, body: {}) => {
-
     /**
      * Cypress command for POST requests
      */
@@ -36,18 +34,24 @@ Cypress.Commands.add('postRequest', (endPoint: string, body: {}) => {
         url: endPoint,
         headers: {
             'content-type': 'application/json',
-            'Authorization': "Bearer " + Cypress.env("token")
+            Authorization: 'Bearer ' + Cypress.env('token'),
         },
-        body: { ...body }
+        body: { ...body },
     });
 });
 
-Cypress.Commands.add('toStringArray', { prevSubject: 'element'}, (subject: JQuery<HTMLElement>) => {
+Cypress.Commands.add(
+    'toStringArray',
+    { prevSubject: 'element' },
+    (subject: JQuery<HTMLElement>) => {
+        /**
+         * Returns an array of strings/text of the elements yielded
+         */
 
-    /**
-     * Returns an array of strings/text of the elements yielded
-     */
-
-    var array: string[] = [];
-    return cy.wrap(subject).each($element => array.push($element.text())).then(() => array);
-});
+        var array: string[] = [];
+        return cy
+            .wrap(subject)
+            .each(($element) => array.push($element.text()))
+            .then(() => array);
+    }
+);

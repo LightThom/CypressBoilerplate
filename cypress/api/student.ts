@@ -2,9 +2,7 @@ import user from '../fixtures/user.json';
 import urls from '../fixtures/urls.json';
 
 export class Student {
-    
     createStudent() {
-
         return cy.postRequest(urls.TEST.apiTestURL, {
             student: user.int.student,
             email_address: user.int.email_address,
@@ -13,4 +11,4 @@ export class Student {
             topping: ['bacon', 'cheese', 'mushroom'],
         });
     }
-};
+}

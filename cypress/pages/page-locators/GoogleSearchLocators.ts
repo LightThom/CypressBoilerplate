@@ -1,8 +1,7 @@
-import { CommonLocators } from "./CommonLocators";
+import { CommonLocators } from '../commons/CommonLocators';
 
 //This is page elements file.
 export class GoogleSearchLocators extends CommonLocators {
-    
     protected get googleSearchInputField() {
         return cy.get('input[name="q"]');
     }
