@@ -40,18 +40,14 @@ Cypress.Commands.add('postRequest', (endPoint: string, body: {}) => {
     });
 });
 
-Cypress.Commands.add(
-    'toStringArray',
-    { prevSubject: 'element' },
-    (subject: JQuery<HTMLElement>) => {
-        /**
-         * Returns an array of strings/text of the elements yielded
-         */
+Cypress.Commands.add('toStringArray', { prevSubject: 'element' }, (subject: JQuery<HTMLElement>) => {
+    /**
+     * Returns an array of strings/text of the elements yielded
+     */
 
-        var array: string[] = [];
-        return cy
-            .wrap(subject)
-            .each(($element) => array.push($element.text()))
-            .then(() => array);
-    }
-);
+    var array: string[] = [];
+    return cy
+        .wrap(subject)
+        .each(($element) => array.push($element.text()))
+        .then(() => array);
+});

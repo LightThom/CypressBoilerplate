@@ -4,11 +4,9 @@ import { User } from '../api/user';
 
 describe('API tests', () => {
     it('creates a student', () => {
-        new Student()
-            .createStudent()
-            .then((response: Cypress.Response<any>) => {
-                expect(response.status).to.eq(200);
-            });
+        new Student().createStudent().then((response: Cypress.Response<any>) => {
+            expect(response.status).to.eq(200);
+        });
     });
 
     it('gets user 2', () => {

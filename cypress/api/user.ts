@@ -13,14 +13,9 @@ export class User {
         /**
          * Posts to the 'users' endpoint of the base url. If argument 'user' is not provided, the default payload is used
          */
-        return cy.postRequest(
-            this.Base_Url + 'users',
-            typeof user === 'undefined'
-                ? {
-                      name: 'mark',
-                      job: 'leader',
-                  }
-                : user
-        );
+        return cy.postRequest(this.Base_Url + 'users', typeof user === 'undefined' ? {
+            name: 'mark',
+            job: 'leader',
+        } : user);
     }
 }
