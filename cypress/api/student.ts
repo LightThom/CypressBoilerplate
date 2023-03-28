@@ -1,5 +1,5 @@
-import user from '../fixtures/user.json';
-import urls from '../fixtures/urls.json';
+import user from "../fixtures/user.json";
+import urls from "../fixtures/urls.json";
 
 export class Student {
     createStudent() {
@@ -8,7 +8,7 @@ export class Student {
             email_address: user.int.email_address,
             phone: user.int.phone,
             current_grade: user.int.current_grade,
-            topping: ['bacon', 'cheese', 'mushroom'],
+            topping: ["bacon", "cheese", "mushroom"]
         });
     }
 }

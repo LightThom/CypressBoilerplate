@@ -1,4 +1,4 @@
-import { CommonLocators } from '../commons/CommonLocators';
+import { CommonLocators } from "../common/CommonLocators";
 
 //This is page elements file.
 export class GoogleSearchLocators extends CommonLocators {
@@ -11,10 +11,10 @@ export class GoogleSearchLocators extends CommonLocators {
     }
 
     get searchResults() {
-        return cy.get('#result-stats');
+        return cy.get("#result-stats");
     }
 
     protected get acceptAllCookies() {
-        return cy.get('#L2AGLb > .QS5gu');
+        return cy.get("#L2AGLb > .QS5gu");
     }
 }

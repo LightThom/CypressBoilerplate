@@ -1,5 +1,5 @@
-import user from '../fixtures/user.json';
-import urls from '../fixtures/urls.json';
+import user from "../fixtures/user.json";
+import urls from "../fixtures/urls.json";
 
 export class DeviceRegistration {
     //
@@ -7,37 +7,35 @@ export class DeviceRegistration {
     //
     getDeviceId() {
         cy.request({
-            method: 'GET',
+            method: "GET",
             url: urls.ACCOUNT.countryURL + user.int.country,
             headers: {
-                'deviceId': 'integration_device_id'
+                deviceId: "integration_device_id"
             }
-        })
-            .then((response) => {
+        }).then(response => {
             // assert correct HTTP Status Codes returned (200 - OK)
-                expect(response.status).to.eq(200);
-            });
-        }
+            expect(response.status).to.eq(200);
+        });
+    }
     //
     // ------------------------ Post User Details Request ------------------------------------
     //
     postUserDetails() {
         cy.request({
-            method: 'POST',
+            method: "POST",
             url: urls.ACCOUNT.signupURL,
             headers: {
-                'deviceId': 'integration_device_id'
+                deviceId: "integration_device_id"
             },
             body: {
-                "password": "Password123",
-                "username": Cypress.env('userEmail'),
-                "country": user.int.country,
-                "tcVersion": user.int.tcVersion
+                password: "Password123",
+                username: Cypress.env("userEmail"),
+                country: user.int.country,
+                tcVersion: user.int.tcVersion
             }
-        })
-            .then((response) => {
+        }).then(response => {
             // assert correct HTTP Status Codes returned (200 - OK)
             expect(response.status).to.eq(200);
         });
     }
-};
+}

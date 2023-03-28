@@ -1,6 +1,6 @@
 export class User {
     // Will be configured in the config file but another value is configured at the moment
-    private readonly Base_Url = 'https://reqres.in/api/';
+    private readonly Base_Url = "https://reqres.in/api/";
 
     getuser(id: number) {
         /**
@@ -13,9 +13,11 @@ export class User {
         /**
          * Posts to the 'users' endpoint of the base url. If argument 'user' is not provided, the default payload is used
          */
-        return cy.postRequest(this.Base_Url + 'users', typeof user === 'undefined' ? {
-            name: 'mark',
-            job: 'leader',
-        } : user);
+        const payload = {
+            name: "mark",
+            job: "leader"
+        };
+
+        return cy.postRequest(this.Base_Url + "users", typeof user === "undefined" ? payload : user);
     }
 }

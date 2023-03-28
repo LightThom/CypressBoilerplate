@@ -5,8 +5,6 @@ export class Generate {
          * There's better ways to this but leaving this here for the POC
          */
 
-        return array.length !== 0
-            ? array[Math.floor(Math.random() * array.length)]
-            : undefined;
+        return array.length !== 0 ? array[Math.floor(Math.random() * array.length)] : undefined;
     }
 }

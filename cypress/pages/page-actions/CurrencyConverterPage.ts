@@ -1,8 +1,8 @@
-import { CurrencyConverterLocators } from '../page-locators/CurrencyConverterLocators';
+import { CurrencyConverterLocators } from "../page-locators/CurrencyConverterLocators";
 
 export class CurrencyConverterPage extends CurrencyConverterLocators {
     navigateTo() {
-        cy.visit('https://xe.com/currencyconverter');
+        cy.visit("https://xe.com/currencyconverter");
     }
 
     clickFromDropdownButton() {
@@ -26,10 +26,8 @@ export class CurrencyConverterPage extends CurrencyConverterLocators {
          * Removes the system unrecognisable hyphens
          */
 
-        var regex = new RegExp(/[^a-zA-Z0-9]+/g);
+        let regex = new RegExp(/[^a-zA-Z0-9]+/g);
 
-        return options
-            .toStringArray()
-            .then((els) => els.map((e) => e.replace(regex, ' ')));
+        return options.toStringArray().then(els => els.map(e => e.replace(regex, " ")));
     }
 }

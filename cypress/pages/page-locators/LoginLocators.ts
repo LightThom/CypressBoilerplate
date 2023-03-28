@@ -1,4 +1,4 @@
-import { CommonLocators } from '../commons/CommonLocators';
+import { CommonLocators } from "../common/CommonLocators";
 
 //This is page elements file.
 export class LoginLocators extends CommonLocators {

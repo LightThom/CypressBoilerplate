@@ -10,37 +10,37 @@ declare global {
     }
 }
 
-Cypress.Commands.add('getRequest', (endPoint: string) => {
+Cypress.Commands.add("getRequest", (endPoint: string) => {
     /**
      * Cypress command for GET requests
      */
 
     return cy.request({
-        method: 'GET',
+        method: "GET",
         url: endPoint,
         headers: {
-            Authorization: 'Bearer' + Cypress.env('token'),
-        },
+            Authorization: "Bearer" + Cypress.env("token")
+        }
     });
 });
 
-Cypress.Commands.add('postRequest', (endPoint: string, body: {}) => {
+Cypress.Commands.add("postRequest", (endPoint: string, body: {}) => {
     /**
      * Cypress command for POST requests
      */
 
     return cy.request({
-        method: 'POST',
+        method: "POST",
         url: endPoint,
         headers: {
-            'content-type': 'application/json',
-            Authorization: 'Bearer ' + Cypress.env('token'),
+            "content-type": "application/json",
+            Authorization: "Bearer " + Cypress.env("token")
         },
-        body: { ...body },
+        body: { ...body }
     });
 });
 
-Cypress.Commands.add('toStringArray', { prevSubject: 'element' }, (subject: JQuery<HTMLElement>) => {
+Cypress.Commands.add("toStringArray", { prevSubject: "element" }, (subject: JQuery<HTMLElement>) => {
     /**
      * Returns an array of strings/text of the elements yielded
      */
@@ -48,6 +48,6 @@ Cypress.Commands.add('toStringArray', { prevSubject: 'element' }, (subject: JQue
     var array: string[] = [];
     return cy
         .wrap(subject)
-        .each(($element) => array.push($element.text()))
+        .each($element => array.push($element.text()))
         .then(() => array);
 });
